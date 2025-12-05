@@ -6,14 +6,14 @@
     <title>Shop | Finch & Poppy Farm</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg fixed-top">
+        <!-- Same navbar as index.html -->
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="logo.png" alt="Finch & Poppy Farm" height="65">
+                <img src="logo.png" alt="Finch & Poppy Farm" height="70">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -30,63 +30,73 @@
         </div>
     </nav>
 
-    <section class="page-header">
-        <div class="container text-center py-5">
-            <h1>Shop Our Organic Products</h1>
-            <p class="lead">Fresh from our farm to your table</p>
-        </div>
+    <section class="page-header text-center py-5" style="background: var(--light-bg);">
+        <h1 class="script" style="font-size: 4.5rem; color: var(--gold);">Shop Our Collection</h1>
+        <p class="lead">Handcrafted in small batches with love</p>
     </section>
 
     <section class="container py-5">
-        <div class="row g-4">
+        <div class="row g-5">
+            <!-- Artisan Jams -->
             <div class="col-md-6 col-lg-4">
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1587049633312-9d4e4d2d9e0f?q=80&w=987" alt="Organic Honey">
+                <div class="product-card text-center">
+                    <img src="IMG_9750.jpg" alt="Strawbanero Jam" class="w-100">
                     <div class="p-4">
-                        <h5>Raw Organic Honey</h5>
-                        <p class="text-muted">Pure, unfiltered honey from our pollinator-friendly hives</p>
-                        <p class="price">$14.00 <small>/ 16oz jar</small></p>
-                        <button class="btn btn-primary add-to-cart" data-name="Raw Organic Honey" data-price="14.00">Add to Cart</button>
+                        <h5>Strawbanero Jam</h5>
+                        <p class="text-muted">Strawberry + Habanero</p>
+                        <p class="price">$12.00</p>
+                        <button class="btn btn-primary add-to-cart" data-name="Strawbanero Jam" data-price="12.00">Add to Cart</button>
                     </div>
                 </div>
             </div>
-            <!-- Repeat similar blocks for other products -->
+
+            <!-- Luxury Candles -->
             <div class="col-md-6 col-lg-4">
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1607305387299-1167a5a4a896?q=80&w=987" alt="Fresh Vegetables">
+                <div class="product-card text-center">
+                    <img src="IMG_0745.jpg" alt="Holiday Cheers Candle" class="w-100">
                     <div class="p-4">
-                        <h5>Seasonal Vegetables</h5>
-                        <p class="text-muted">Tower-grown greens and root crops</p>
-                        <p class="price">$6.00 <small>/ lb</small></p>
-                        <button class="btn btn-primary add-to-cart" data-name="Seasonal Vegetables" data-price="6.00">Add to Cart</button>
+                        <h5>Holiday Cheers Candle</h5>
+                        <p class="text-muted">Festive spice & vanilla</p>
+                        <p class="price">$28.00</p>
+                        <button class="btn btn-primary add-to-cart" data-name="Holiday Cheers Candle" data-price="28.00">Add to Cart</button>
                     </div>
                 </div>
             </div>
+
+            <!-- Room Spray -->
             <div class="col-md-6 col-lg-4">
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1588964896365-87bc1e41d9e9?q=80&w=987" alt="Pasture Eggs">
+                <div class="product-card text-center">
+                    <img src="8FAA45B6.jpg" alt="My Old Kentucky Farmhouse Spray" class="w-100">
                     <div class="p-4">
-                        <h5>Pasture-Raised Eggs</h5>
-                        <p class="text-muted">Multicolored dozen from happy hens</p>
-                        <p class="price">$7.00 <small>/ dozen</small></p>
-                        <button class="btn btn-primary add-to-cart" data-name="Pasture-Raised Eggs" data-price="7.00">Add to Cart</button>
+                        <h5>My Old Kentucky Farmhouse</h5>
+                        <p class="text-muted">Room & Linen Spray</p>
+                        <p class="price">$18.00</p>
+                        <button class="btn btn-primary add-to-cart" data-name="KY Farmhouse Spray" data-price="18.00">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="cart-summary mt-5 p-4 bg-light-beige rounded">
+        <h2 class="text-center mt-8 mb-5 script" style="font-size: 3rem; color: var(--gold);">Coming in 2026</h2>
+        <div class="row text-center opacity-60">
+            <div class="col-md-4 coming-soon"><p>Raw Organic Honey</p></div>
+            <div class="col-md-4 coming-soon"><p> Fresh Vegetables</p></div>
+            <div class="col-md-4 coming-soon"><p> Pasture-Raised Eggs</p></div>
+        </div>
+
+        <!-- Cart Summary -->
+        <div class="cart-summary mt-5 p-5 bg-light-beige rounded text-center">
             <h4>Your Cart (<span id="cart-count">0</span> items)</h4>
-            <div id="cart-items"></div>
-            <p class="mt-3"><strong>Total: $<span id="cart-total">0.00</span></strong></p>
-            <button class="btn btn-success btn-lg" id="checkout">Proceed to Checkout</button>
+            <div id="cart-items" class="my-4"></div>
+            <p class="h3><strong>Total: $<span id="cart-total">0.00</span></strong></p>
+            <button class="btn btn-success btn-lg" id="checkout">Send Order via Email</button>
         </div>
     </section>
 
     <footer>
-        <div class="container text-center">
-            <img src="logo.png" alt="Finch & Poppy Farm" height="70" class="mb-3">
-            <p>&copy; 2025 Finch & Poppy Farm LLC • Stanford, Kentucky</p>
+        <div class="container text-center py-5">
+            <img src="logo.png" alt="Finch & Poppy Farm" height="80">
+            <p class="signature mt-3">Handcrafted with love in Kentucky</p>
         </div>
     </footer>
 
