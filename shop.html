@@ -84,13 +84,17 @@
             <div class="col-md-4 coming-soon"><p> Pasture-Raised Eggs</p></div>
         </div>
 
-        <!-- Cart Summary -->
-        <div class="cart-summary mt-5 p-5 bg-light-beige rounded text-center">
-            <h4>Your Cart (<span id="cart-count">0</span> items)</h4>
-            <div id="cart-items" class="my-4"></div>
-            <p class="h3><strong>Total: $<span id="cart-total">0.00</span></strong></p>
-            <button class="btn btn-success btn-lg" id="checkout">Send Order via Email</button>
-        </div>
+        <!-- REAL CHECKOUT CART SUMMARY -->
+<div class="cart-summary mt-5 p-5 bg-light-beige rounded text-center">
+    <h3 class="script" style="color: var(--gold);">Your Cart</h3>
+    <div id="cart-items" class="my-4"></div>
+    <p class="h3 mb-4"><strong>Total: $<span id="cart-total">0.00</span></strong></p>
+    <!-- This button sends them to real payment -->
+    <a href="#" id="real-checkout-btn" class="btn btn-primary btn-lg" style="display: none;">
+        Checkout & Pay Securely
+    </a>
+    <p id="empty-cart-message">Your cart is empty</p>
+</div>
     </section>
 
     <footer>
