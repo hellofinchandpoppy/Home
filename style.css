@@ -69,8 +69,9 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1000;
 }
 
+/* LOGO SIZE – PERFECT BALANCE FOR THIN NAVBAR */
 .navbar-brand img {
-    height: 48px !important;
+    height: 62px !important;        /* Perfect visible size */
     transition: height 0.3s ease;
 }
 
@@ -91,8 +92,9 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.25rem 0 !important;
     min-height: 60px;
 }
+/* Even nicer when scrolled */
 .navbar.scrolled .navbar-brand img {
-    height: 42px !important;
+    height: 54px !important;        /* Shrinks gracefully on scroll */
 }
 
 /* ==================== HERO WITH VIDEO ==================== */
