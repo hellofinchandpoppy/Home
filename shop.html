@@ -134,6 +134,10 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <!-- STRIPE – Add this right before script.js -->
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    const stripe = Stripe('pk_test_51SbkfeEue5doYTjkr2IiMXJ4DdKFAIDA6fPmdHPSiY8c360yBmolSR8qW6tgxYMCuJvekeJJx9tX8tcq79es8nL000sTtzS1Ts'); // ← Replace with YOUR publishable key
+</script>
 </body>
 </html>
