@@ -1,11 +1,11 @@
-// script.js v5.2 – FULL WORKING CHECKOUT WITH STRIPE
+// script.js v5.3 – FIXED CART DRAWER + STRIPE CHECKOUT
 let cart = JSON.parse(localStorage.getItem('finchpoppy-cart')) || [];
-const SHIPPING = 800; // $8.00 in cents (USA flat rate)
+const SHIPPING = 800; // $8.00 in cents
 
 document.addEventListener('DOMContentLoaded', () => {
     updateCart();
 
-    // Add to cart buttons
+    // Add to cart
     document.querySelectorAll('.add-to-cart').forEach(btn => {
         btn.addEventListener('click', () => {
             const name = btn.dataset.name;
@@ -18,10 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Checkout button – triggers Stripe payment
+    // Checkout button
     document.getElementById('checkout')?.addEventListener('click', async () => {
         if (cart.length === 0) return alert('Your cart is empty');
-
+        
         const lineItems = cart.map(item => ({
             price_data: {
                 currency: 'usd',
@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
             quantity: item.qty,
         }));
 
-        // Add shipping line item
         lineItems.push({
             price_data: {
                 currency: 'usd',
@@ -41,8 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             quantity: 1,
         });
 
-        // Create Stripe session
-        const response = await fetch('https://stripe-checkout-proxy.netlify.app/.netlify/functions/checkout', { // Free proxy – works instantly
+        const response = await fetch('https://stripe-checkout-proxy.netlify.app/.netlify/functions/checkout', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ lineItems })
@@ -61,7 +59,6 @@ function updateCart() {
 
     itemsDiv.innerHTML = '';
     let subtotal = 0;
-
     cart.forEach((item, i) => {
         subtotal += item.price * item.qty;
         itemsDiv.innerHTML += `
@@ -73,13 +70,21 @@ function updateCart() {
     });
 
     const total = subtotal + SHIPPING;
-    if (subtotalSpan) subtotalSpan.textContent = (subtotal / 100).toFixed(2);
+    subtotalSpan.textContent = (subtotal / 100).toFixed(2);
     totalSpan.textContent = (total / 100).toFixed(2);
-    if (countSpan) countSpan.textContent = cart.reduce((s, i) => s + i.qty, 0);
+    countSpan.textContent = cart.reduce((s, i) => s + i.qty, 0);
 }
 
 function removeItem(i) {
     cart.splice(i, 1);
     localStorage.setItem('finchpoppy-cart', JSON.stringify(cart));
     updateCart();
+}
+
+function toggleCart() {
+    document.getElementById('cart-drawer').classList.toggle('open');
+}
+
+function closeCart() {
+    document.getElementById('cart-drawer').classList.remove('open');
 }
