@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Handcrafted small-batch jams, luxury candles, and botanical perfumes from Finch & Poppy Farm in Kentucky.">
+    <link rel="icon" href="favicon.ico">
     <title>Finch & Poppy Farm | Handcrafted in Kentucky</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=3.4">
+    <link rel="stylesheet" href="style.css?v=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&family=The+Seasons:wght@400;700&family=Homemade+Apple&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <!-- THIN LUXE NAVBAR -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="logo.png" alt="Finch & Poppy Farm" height="62">
+                <img src="logo.png" alt="Finch & Poppy Farm Logo" height="62">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -30,72 +31,48 @@
             </div>
         </div>
     </nav>
-
     <!-- HERO WITH VIDEO BACKGROUND -->
     <header class="hero position-relative overflow-hidden">
-        <video class="hero-video" autoplay muted loop playsinline disablePictureInPicture>
+        <video class="hero-video" autoplay muted loop playsinline disablepictureinpicture preload="auto">
             <source src="index-background.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="video-overlay"></div>
-
         <div class="hero-text position-relative text-center">
-            <h1 style="font-size: 6.5rem; color: #E1DACA; line-height: 1.1; margin: 0;">
-                Finch & Poppy
-            </h1>
-            <p class="script mb-4" style="font-size: 2.8rem; color: #9A7C49; line-height: 1.2; margin: 0;">
-                Handcrafted with love in Kentucky
-            </p>
-            <p class="lead mb-5" style="color: #E1DACA; font-size: 1.4rem;">
-                Small-batch jams · Luxury candles · Botanical perfumes
-            </p>
+            <h1 class="mb-0">Finch & Poppy</h1>
+            <p class="script mb-4">Handcrafted with love in Kentucky</p>
+            <p class="lead mb-5">Small-batch jams · Luxury candles · Botanical perfumes</p>
             <a href="shop.html" class="btn btn-primary btn-lg">Shop the Collection</a>
         </div>
     </header>
-
-    <!-- CURRENT OFFERINGS – Your New Image Names -->
+    <!-- CURRENT OFFERINGS -->
     <section class="container py-5 text-center">
-        <h2 class="script mb-5" style="font-size: 3.8rem; color: var(--gold);">Our Current Offerings</h2>
+        <h2 class="script mb-5">Our Current Offerings</h2>
         <div class="row g-5 justify-content-center">
             <div class="col-md-4">
-                <img src="Jams.jpg" class="img-fluid rounded-shadow mb-4" alt="Small-Batch Jams & Preserves">
+                <img src="Jams.jpg" class="img-fluid rounded-shadow mb-4" alt="Small-Batch Jams & Preserves" loading="lazy">
                 <h4>Small-Batch Jams & Preserves</h4>
             </div>
             <div class="col-md-4">
-                <img src="Candles.jpg" class="img-fluid rounded-shadow mb-4" alt="Luxury Candles & Home Fragrance">
+                <img src="Candles.jpg" class="img-fluid rounded-shadow mb-4" alt="Luxury Candles & Home Fragrance" loading="lazy">
                 <h4>Luxury Candles & Home Fragrance</h4>
             </div>
             <div class="col-md-4">
-                <img src="Perfume.jpg" class="img-fluid rounded-shadow mb-4" alt="Botanical Perfume Rollers & Room Sprays">
-                <h4>Perfumes</h4>
+                <img src="Perfume.jpg" class="img-fluid rounded-shadow mb-4" alt="Botanical Perfume Rollers & Room Sprays" loading="lazy">
+                <h4>Botanical Perfumes & Sprays</h4>
             </div>
         </div>
     </section>
-
     <!-- FOOTER -->
     <footer>
-    <footer>
         <div class="container text-center py-5">
-            <img src="logo.png" alt="Finch & Poppy Farm" height="80" class="mb-3">
+            <img src="logo.png" alt="Finch & Poppy Farm Logo" height="80" class="mb-3">
             <p class="signature">Handcrafted in Stanford, Kentucky</p>
             <p style="color: #999; font-size: 0.9rem;">© 2025 Finch & Poppy Farm LLC</p>
         </div>
     </footer>
-
-    <!-- Scripts at bottom for fastest loading -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
-
-    <!-- Thin navbar on scroll -->
-    <script>
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-    </script>
 </body>
 </html>
