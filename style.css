@@ -249,5 +249,20 @@ footer a:hover { color: white; }
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
+/* ==================== SIDE NAVIGATION – FIXED ON DESKTOP ==================== */
+.list-group-item {
+    border: none;
+    padding: 1rem 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #4A3C30;
+    background: #FAF9F6;
+}
+.list-group-item:hover,
+.list-group-item:active {
+    background: #9A7C49 !important;
+    color: white !important;
+}
+
 /* ==================== RESPONSIVE ==================== */
 @media (max-width:
