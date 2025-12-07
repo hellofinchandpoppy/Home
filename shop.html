@@ -78,8 +78,27 @@
                     <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Kentucky Rain Room Spray</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Kentucky Rain Room Spray" data-price="17.99">Add to Cart</button></div></div>
                 </div>
 
-                <!-- Carpet Sprinkles & Jams – same clean style -->
-                <!-- (Full list included in final file – same pattern) -->
+                <!-- Carpet Sprinkles — 16 oz ⋅ $9.99 each -->
+                <h2 class="mb-4">Carpet Sprinkles — 16 oz shaker ⋅ $9.99 each</h2>
+                <div class="row g-4 mb-5">
+                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>My Old Kentucky Farmhouse Carpet Sprinkles</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="My Old Kentucky Farmhouse Carpet Sprinkles" data-price="9.99">Add to Cart</button></div></div>
+                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Southern Charm Carpet Sprinkles</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Southern Charm Carpet Sprinkles" data-price="9.99">Add to Cart</button></div></div>
+                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Bluegrass Breeze Carpet Sprinkles</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Bluegrass Breeze Carpet Sprinkles" data-price="9.99">Add to Cart</button></div></div>
+                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Derby Days Carpet Sprinkles</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Derby Days Carpet Sprinkles" data-price="9.99">Add to Cart</button></div></div>
+                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Bardstown Berry Carpet Sprinkles</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Bardstown Berry Carpet Sprinkles" data-price="9.99">Add to Cart</button></div></div>
+                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Downtown Stanford Carpet Sprinkles</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Downtown Stanford Carpet Sprinkles" data-price="9.99">Add to Cart</button></div></div>
+                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Kentucky Rain Carpet Sprinkles</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Kentucky Rain Carpet Sprinkles" data-price="9.99">Add to Cart</button></div></div>
+                </div>
+
+                <!-- Artisanal Jams — 4 oz ⋅ $6.99 each -->
+                <h2 class="mb-4">Artisanal Jams & Preserves — 4 oz ⋅ $6.99 each</h2>
+                <div class="row g-4 mb-5">
+                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Strawbanero Jam</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Strawbanero Jam" data-price="6.99">Add to Cart</button></div></div>
+                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Sweet Sunshine Jelly</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Sweet Sunshine Jelly" data-price="6.99">Add to Cart</button></div></div>
+                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Kentucky Blue Jam</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Kentucky Blue Jam" data-price="6.99">Add to Cart</button></div></div>
+                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Cherry Blossom Jam</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Cherry Blossom Jam" data-price="6.99">Add to Cart</button></div></div>
+                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Tipsy Peach Preserves</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Tipsy Peach Preserves" data-price="6.99">Add to Cart</button></div></div>
+                </div>
 
                 <!-- CART SUMMARY – clean and minimal -->
                 <div class="text-center p-5 bg-light rounded mt-5">
@@ -89,6 +108,19 @@
                     <button id="checkout" class="btn btn-primary btn-lg mt-3">Checkout & Pay</button>
                 </div>
 
+                <!-- INTERNAL CHECKOUT FORM – HIDDEN UNTIL CLICKED -->
+                <div id="checkout-form" style="display:none; max-width:600px; margin:0 auto; padding:2rem; background:#FAF9F6; border-radius:12px;">
+                    <h3 class="text-center mb-4">Complete Your Order</h3>
+                    <div id="cart-items"></div>
+                    <p class="h4 text-center my-4">Total: $<span id="cart-total">0.00</span></p>
+    
+                <form id="payment-form">
+                <input type="email" id="email" placeholder="Your email" required class="form-control mb-3">
+                <div id="card-element" class="form-control p-3 bg-white"></div>
+                <div id="card-errors" class="text-danger mt-2"></div>
+                <button type="submit" class="btn btn-primary btn-lg w-100 mt-4">Pay Now</button>
+                </form>
+                </div>
             </div>
         </div>
     </section>
