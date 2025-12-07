@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop | Finch & Poppy Farm</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=3.7">
+    <link rel="stylesheet" href="style.css?v=7.1">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- STRIPE -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        const stripe = Stripe('pk_test_51SbkfeEue5doYTjkr2IiMXJ4DdKFAIDA6fPmdHPSiY8c360yBmolSR8qW6tgxYMCuJvekeJJx9tX8tcq79es8nL000sTtzS1Ts');
+    </script>
 </head>
 <body>
 
-    <!-- SAME NAVBAR AS ABOUT PAGE -->
+    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
@@ -31,7 +36,7 @@
         </div>
     </nav>
 
-    <!-- EXACT SAME HEADER STYLE AS ABOUT PAGE -->
+    <!-- PAGE HEADER -->
     <section class="page-header">
         <div class="container text-center py-5">
             <h1>Shop</h1>
@@ -39,117 +44,310 @@
         </div>
     </section>
 
-    <!-- MAIN CONTENT – CLEAN, SPACED, SAME AS ABOUT PAGE -->
     <section class="container py-5">
         <div class="row">
             <div class="col-lg-10 mx-auto">
 
-                <!-- Luxury Candles -->
+                <!-- LUXURY CANDLES — 10 oz ⋅ $19.99 each -->
                 <h2 class="mb-4">Luxury Candles — 10 oz ⋅ $19.99 each</h2>
                 <div class="row g-4 mb-5">
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>My Old Kentucky Farmhouse Candle</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="My Old Kentucky Farmhouse Candle" data-price="19.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Southern Charm Candle</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Southern Charm Candle" data-price="19.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Bluegrass Breeze Candle</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Bluegrass Breeze Candle" data-price="19.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Derby Days Candle</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Derby Days Candle" data-price="19.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Bardstown Berry Candle</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Bardstown Berry Candle" data-price="19.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Downtown Stanford Candle</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Downtown Stanford Candle" data-price="19.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Kentucky Rain Candle</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Kentucky Rain Candle" data-price="19.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Sweet Autumn Reserve Candle</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Sweet Autumn Reserve Candle" data-price="19.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Pumpkin Brûlée Candle</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Pumpkin Brûlée Candle" data-price="19.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>The Ol’ Tobacco Barn Candle</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="The Ol’ Tobacco Barn Candle" data-price="19.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Christmas in Kentucky Candle</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Christmas in Kentucky Candle" data-price="19.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Santa’s Village Candle</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Santa’s Village Candle" data-price="19.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Winter Berry Bliss Candle</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Winter Berry Bliss Candle" data-price="19.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Peppermint Mocha Candle</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Peppermint Mocha Candle" data-price="19.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Holiday Cheers Candle</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Holiday Cheers Candle" data-price="19.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Cookies for Santa Candle</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Cookies for Santa Candle" data-price="19.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Christmas Tree Farm Candle</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Christmas Tree Farm Candle" data-price="19.99">Add to Cart</button></div></div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="candle-myoldkentuckyfarmhouse.jpg" alt="My Old Kentucky Farmhouse Candle" class="img-fluid rounded mb-3">
+                            <h5>My Old Kentucky Farmhouse Candle</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="My Old Kentucky Farmhouse Candle" data-price="19.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="candle-southerncharm.jpg" alt="Southern Charm Candle" class="img-fluid rounded mb-3">
+                            <h5>Southern Charm Candle</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Southern Charm Candle" data-price="19.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="candle-bluegrassbreeze.jpg" alt="Bluegrass Breeze Candle" class="img-fluid rounded mb-3">
+                            <h5>Bluegrass Breeze Candle</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Bluegrass Breeze Candle" data-price="19.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="candle-derbydays.jpg" alt="Derby Days Candle" class="img-fluid rounded mb-3">
+                            <h5>Derby Days Candle</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Derby Days Candle" data-price="19.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="candle-bardstownberry.jpg" alt="Bardstown Berry Candle" class="img-fluid rounded mb-3">
+                            <h5>Bardstown Berry Candle</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Bardstown Berry Candle" data-price="19.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="candle-downtownstanford.jpg" alt="Downtown Stanford Candle" class="img-fluid rounded mb-3">
+                            <h5>Downtown Stanford Candle</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Downtown Stanford Candle" data-price="19.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="candle-kentuckyrain.jpg" alt="Kentucky Rain Candle" class="img-fluid rounded mb-3">
+                            <h5>Kentucky Rain Candle</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Kentucky Rain Candle" data-price="19.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="candle-sweetautumnreserve.jpg" alt="Sweet Autumn Reserve Candle" class="img-fluid rounded mb-3">
+                            <h5>Sweet Autumn Reserve Candle</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Sweet Autumn Reserve Candle" data-price="19.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="candle-pumpkinbrulee.jpg" alt="Pumpkin Brûlée Candle" class="img-fluid rounded mb-3">
+                            <h5>Pumpkin Brûlée Candle</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Pumpkin Brûlée Candle" data-price="19.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="candle-oltobaccobarn.jpg" alt="The Ol’ Tobacco Barn Candle" class="img-fluid rounded mb-3">
+                            <h5>The Ol’ Tobacco Barn Candle</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="The Ol’ Tobacco Barn Candle" data-price="19.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="candle-christmasinkentucky.jpg" alt="Christmas in Kentucky Candle" class="img-fluid rounded mb-3">
+                            <h5>Christmas in Kentucky Candle</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Christmas in Kentucky Candle" data-price="19.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="candle-santasvillage.jpg" alt="Santa’s Village Candle" class="img-fluid rounded mb-3">
+                            <h5>Santa’s Village Candle</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Santa’s Village Candle" data-price="19.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="candle-winterberrybliss.jpg" alt="Winter Berry Bliss Candle" class="img-fluid rounded mb-3">
+                            <h5>Winter Berry Bliss Candle</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Winter Berry Bliss Candle" data-price="19.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="candle-peppermintmocha.jpg" alt="Peppermint Mocha Candle" class="img-fluid rounded mb-3">
+                            <h5>Peppermint Mocha Candle</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Peppermint Mocha Candle" data-price="19.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="candle-holidaycheers.jpg" alt="Holiday Cheers Candle" class="img-fluid rounded mb-3">
+                            <h5>Holiday Cheers Candle</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Holiday Cheers Candle" data-price="19.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="candle-cookiesforsanta.jpg" alt="Cookies for Santa Candle" class="img-fluid rounded mb-3">
+                            <h5>Cookies for Santa Candle</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Cookies for Santa Candle" data-price="19.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="candle-christmastreefarm.jpg" alt="Christmas Tree Farm Candle" class="img-fluid rounded mb-3">
+                            <h5>Christmas Tree Farm Candle</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Christmas Tree Farm Candle" data-price="19.99">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Room Sprays -->
+                <!-- ROOM SPRAYS — 8 oz ⋅ $17.99 each -->
                 <h2 class="mb-4">Room Sprays — 8 oz amber bottle ⋅ $17.99 each</h2>
                 <div class="row g-4 mb-5">
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>My Old Kentucky Farmhouse Room Spray</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="My Old Kentucky Farmhouse Room Spray" data-price="17.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Southern Charm Room Spray</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Southern Charm Room Spray" data-price="17.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Bluegrass Breeze Room Spray</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Bluegrass Breeze Room Spray" data-price="17.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Derby Days Room Spray</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Derby Days Room Spray" data-price="17.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Bardstown Berry Room Spray</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Bardstown Berry Room Spray" data-price="17.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Downtown Stanford Room Spray</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Downtown Stanford Room Spray" data-price="17.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Kentucky Rain Room Spray</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Kentucky Rain Room Spray" data-price="17.99">Add to Cart</button></div></div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="spray-myoldkentuckyfarmhouse.jpg" alt="My Old Kentucky Farmhouse Room Spray" class="img-fluid rounded mb-3">
+                            <h5>My Old Kentucky Farmhouse Room Spray</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="My Old Kentucky Farmhouse Room Spray" data-price="17.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="spray-southerncharm.jpg" alt="Southern Charm Room Spray" class="img-fluid rounded mb-3">
+                            <h5>Southern Charm Room Spray</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Southern Charm Room Spray" data-price="17.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="spray-bluegrassbreeze.jpg" alt="Bluegrass Breeze Room Spray" class="img-fluid rounded mb-3">
+                            <h5>Bluegrass Breeze Room Spray</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Bluegrass Breeze Room Spray" data-price="17.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="spray-derbydays.jpg" alt="Derby Days Room Spray" class="img-fluid rounded mb-3">
+                            <h5>Derby Days Room Spray</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Derby Days Room Spray" data-price="17.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="spray-bardstownberry.jpg" alt="Bardstown Berry Room Spray" class="img-fluid rounded mb-3">
+                            <h5>Bardstown Berry Room Spray</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Bardstown Berry Room Spray" data-price="17.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="spray-downtownstanford.jpg" alt="Downtown Stanford Room Spray" class="img-fluid rounded mb-3">
+                            <h5>Downtown Stanford Room Spray</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Downtown Stanford Room Spray" data-price="17.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="spray-kentuckyrain.jpg" alt="Kentucky Rain Room Spray" class="img-fluid rounded mb-3">
+                            <h5>Kentucky Rain Room Spray</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Kentucky Rain Room Spray" data-price="17.99">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Carpet Sprinkles — 16 oz ⋅ $9.99 each -->
+                <!-- CARPET SPRINKLES — 16 oz ⋅ $9.99 each -->
                 <h2 class="mb-4">Carpet Sprinkles — 16 oz shaker ⋅ $9.99 each</h2>
                 <div class="row g-4 mb-5">
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>My Old Kentucky Farmhouse Carpet Sprinkles</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="My Old Kentucky Farmhouse Carpet Sprinkles" data-price="9.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Southern Charm Carpet Sprinkles</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Southern Charm Carpet Sprinkles" data-price="9.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Bluegrass Breeze Carpet Sprinkles</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Bluegrass Breeze Carpet Sprinkles" data-price="9.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Derby Days Carpet Sprinkles</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Derby Days Carpet Sprinkles" data-price="9.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Bardstown Berry Carpet Sprinkles</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Bardstown Berry Carpet Sprinkles" data-price="9.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Downtown Stanford Carpet Sprinkles</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Downtown Stanford Carpet Sprinkles" data-price="9.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Kentucky Rain Carpet Sprinkles</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Kentucky Rain Carpet Sprinkles" data-price="9.99">Add to Cart</button></div></div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="sprinkles-myoldkentuckyfarmhouse.jpg" alt="My Old Kentucky Farmhouse Carpet Sprinkles" class="img-fluid rounded mb-3">
+                            <h5>My Old Kentucky Farmhouse Carpet Sprinkles</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="My Old Kentucky Farmhouse Carpet Sprinkles" data-price="9.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="sprinkles-southerncharm.jpg" alt="Southern Charm Carpet Sprinkles" class="img-fluid rounded mb-3">
+                            <h5>Southern Charm Carpet Sprinkles</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Southern Charm Carpet Sprinkles" data-price="9.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="sprinkles-bluegrassbreeze.jpg" alt="Bluegrass Breeze Carpet Sprinkles" class="img-fluid rounded mb-3">
+                            <h5>Bluegrass Breeze Carpet Sprinkles</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Bluegrass Breeze Carpet Sprinkles" data-price="9.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="sprinkles-derbydays.jpg" alt="Derby Days Carpet Sprinkles" class="img-fluid rounded mb-3">
+                            <h5>Derby Days Carpet Sprinkles</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Derby Days Carpet Sprinkles" data-price="9.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="sprinkles-bardstownberry.jpg" alt="Bardstown Berry Carpet Sprinkles" class="img-fluid rounded mb-3">
+                            <h5>Bardstown Berry Carpet Sprinkles</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Bardstown Berry Carpet Sprinkles" data-price="9.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="sprinkles-downtownstanford.jpg" alt="Downtown Stanford Carpet Sprinkles" class="img-fluid rounded mb-3">
+                            <h5>Downtown Stanford Carpet Sprinkles</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Downtown Stanford Carpet Sprinkles" data-price="9.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="sprinkles-kentuckyrain.jpg" alt="Kentucky Rain Carpet Sprinkles" class="img-fluid rounded mb-3">
+                            <h5>Kentucky Rain Carpet Sprinkles</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Kentucky Rain Carpet Sprinkles" data-price="9.99">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Artisanal Jams — 4 oz ⋅ $6.99 each -->
+                <!-- ARTISANAL JAMS — 4 oz ⋅ $6.99 each -->
                 <h2 class="mb-4">Artisanal Jams & Preserves — 4 oz ⋅ $6.99 each</h2>
                 <div class="row g-4 mb-5">
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Strawbanero Jam</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Strawbanero Jam" data-price="6.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Sweet Sunshine Jelly</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Sweet Sunshine Jelly" data-price="6.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Kentucky Blue Jam</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Kentucky Blue Jam" data-price="6.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Cherry Blossom Jam</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Cherry Blossom Jam" data-price="6.99">Add to Cart</button></div></div>
-                    <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Tipsy Peach Preserves</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Tipsy Peach Preserves" data-price="6.99">Add to Cart</button></div></div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="jam-strawbanero.jpg" alt="Strawbanero Jam" class="img-fluid rounded mb-3">
+                            <h5>Strawbanero Jam</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Strawbanero Jam" data-price="6.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="jam-sweetsunshine.jpg" alt="Sweet Sunshine Jelly" class="img-fluid rounded mb-3">
+                            <h5>Sweet Sunshine Jelly</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Sweet Sunshine Jelly" data-price="6.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="jam-kentuckyblue.jpg" alt="Kentucky Blue Jam" class="img-fluid rounded mb-3">
+                            <h5>Kentucky Blue Jam</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Kentucky Blue Jam" data-price="6.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="jam-cherryblossom.jpg" alt="Cherry Blossom Jam" class="img-fluid rounded mb-3">
+                            <h5>Cherry Blossom Jam</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Cherry Blossom Jam" data-price="6.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card text-center">
+                            <img src="jam-tipsypeach.jpg" alt="Tipsy Peach Preserves" class="img-fluid rounded mb-3">
+                            <h5>Tipsy Peach Preserves</h5>
+                            <button class="btn btn-primary mt-2 add-to-cart" data-name="Tipsy Peach Preserves" data-price="6.99">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
 
-               
+                <!-- CART DRAWER + TOGGLE -->
                 <div id="cart-drawer" class="cart-drawer">
-                <div class="cart-header">
-                <h3>Your Cart</h3>
-                <button class="btn-close" onclick="closeCart()"></button>
+                    <div class="cart-header">
+                        <h3>Your Cart</h3>
+                        <button class="btn-close" onclick="closeCart()"></button>
                     </div>
                     <div id="cart-items" class="cart-items"></div>
                     <div class="cart-footer">
-                    <p><strong>Subtotal:</strong> $<span id="cart-subtotal">0.00</span></p>
-                    <p><strong>Shipping:</strong> $8.00 (Flat Rate USA)</p>
-                    <p class="fs-5"><strong>Total:</strong> $<span id="cart-total">8.00</span></p>
-                <button id="checkout" class="btn btn-primary w-100">Checkout & Pay</button>
+                        <p><strong>Subtotal:</strong> $<span id="cart-subtotal">0.00</span></p>
+                        <p><strong>Shipping:</strong> $8.00 (Flat Rate USA)</p>
+                        <p class="fs-5"><strong>Total:</strong> $<span id="cart-total">8.00</span></p>
+                        <button id="checkout" class="btn btn-primary w-100">Checkout & Pay</button>
+                    </div>
                 </div>
-                </div>
+                <button class="cart-toggle" onclick="toggleCart()">Cart (<span id="cart-count">0</span>)</button>
 
-                <!-- Cart toggle button (add to navbar or bottom-right corner) -->
-                <button class="cart-toggle" onclick="toggleCart()">
-                Cart (<span id="cart-count">0</span>)
-                </button>
-
-                <!-- INTERNAL CHECKOUT FORM – HIDDEN UNTIL CLICKED -->
-                <div id="checkout-form" style="display:none; max-width:600px; margin:0 auto; padding:2rem; background:#FAF9F6; border-radius:12px;">
-                    <h3 class="text-center mb-4">Complete Your Order</h3>
-                    <div id="cart-items"></div>
-                    <p class="h4 text-center my-4">Total: $<span id="cart-total">0.00</span></p>
-    
-                <form id="payment-form">
-                <input type="email" id="email" placeholder="Your email" required class="form-control mb-3">
-                <div id="card-element" class="form-control p-3 bg-white"></div>
-                <div id="card-errors" class="text-danger mt-2"></div>
-                <button type="submit" class="btn btn-primary btn-lg w-100 mt-4">Pay Now</button>
-                </form>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- SAME FOOTER AS ABOUT PAGE -->
     <footer>
         <div class="container text-center py-5">
-            <img src="logo.png" alt="Finch & Poppy Farm" height="70" class="mb-3">
+            <img src="logo.png" alt="Finch & Poppy Farm" height="70">
             <p>&copy; 2025 Finch & Poppy Farm LLC • Stanford, Kentucky</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- STRIPE – Add this right before script.js -->
-<script src="https://js.stripe.com/v3/"></script>
-<script>
-    const stripe = Stripe('pk_test_51SbkfeEue5doYTjkr2IiMXJ4DdKFAIDA6fPmdHPSiY8c360yBmolSR8qW6tgxYMCuJvekeJJx9tX8tcq79es8nL000sTtzS1Ts'); // ← Replace with YOUR publishable key
-</script>
+    <script src="script.js"></script>
 </body>
 </html>
