@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             quantity: 1,
         });
 
-        const response = await fetch('https://stripe-checkout-proxy.netlify.app/.netlify/functions/checkout', {
+        const response = await fetch('https://finchandpoppy.netlify.app/.netlify/functions/checkout', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ lineItems })
