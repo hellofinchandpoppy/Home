@@ -18,6 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            emailjs.init('YOUR_USER_ID');
+            contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', contactForm)
+            .then(() => alert('Message sent!'), (err) => alert('Error: ' + JSON.stringify(err)));
+        });
+    }
+    
     // Checkout button
     document.getElementById('checkout')?.addEventListener('click', async () => {
         if (cart.length === 0) return alert('Your cart is empty');
