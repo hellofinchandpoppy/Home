@@ -1,101 +1,73 @@
+// script.js v4.0 – Internal Cart + Real Stripe Payments
+let cart = JSON.parse(localStorage.getItem('finchpoppy-cart')) || [];
+
+const stripe = Stripe('pk_live_YOUR_PUBLISHABLE_KEY_HERE'); // ← Replace with your key
+const elements = stripe.elements();
+
 document.addEventListener('DOMContentLoaded', () => {
-    let cart = JSON.parse(localStorage.getItem('finchpoppy-cart')) || [];
-    const cartItemsDiv = document.getElementById('cart-items');
-    const cartTotalSpan = document.getElementById('cart-total');
-    const cartCountSpan = document.getElementById('cart-count');
-    const checkoutBtn = document.getElementById('real-checkout-btn');
-    const emptyMessage = document.getElementById('empty-cart-message');
-    // UPDATE THIS WITH YOUR REAL BUY ME A COFFEE LINKS
-    const productLinks = {
-        "Strawbanero Jam": "https://buymeacoffee.com/HelloFinch.Poppy/e/486365",
-        "Holiday Cheers Candle": "https://buymeacoffee.com/yourname/e/candle",
-        "My Old Kentucky Farmhouse Spray": "https://buymeacoffee.com/yourname/e/spray",
-        "My Old Kentucky Farmhouse Candle":
-        "Southern Charm Candle":
-        "Bluegrass Breeze Candle":
-        "Derby Days Candle":
-        "Bardstown Berry Candle":
-        "Downtown Stanford Candle":
-        "Kentucky Rain Candle":
-        "Sweet Autumn Reserve Candle":
-        "Pumpkin Brûlée Candle":
-        "The Ol’ Tobacco Barn Candle":
-        "Christmas in Kentucky Candle":
-        "Santa’s Village Candle":
-        "Winter Berry Bliss Candle":
-        "Peppermint Mocha Candle":
-        "Holiday Cheers Candle":
-        "Cookies for Santa Candle":
-        "Christmas Tree Farm Candle":
-        "My Old Kentucky Farmhouse Room Spray":
-        "Southern Charm Room Spray":
-        "Bluegrass Breeze Room Spray":
-        "Derby Days Room Spray":
-        "Bardstown Berry Room Spray":
-        "Downtown Stanford Room Spray":
-        "Kentucky Rain Room Spray":
-        "My Old Kentucky Farmhouse Carpet Sprinkles":
-        "Southern Charm Carpet Sprinkles":
-        "Bluegrass Breeze Carpet Sprinkles":
-        "Derby Days Carpet Sprinkles":
-        "Bardstown Berry Carpet Sprinkles":
-        "Downtown Stanford Carpet Sprinkles":
-        "Kentucky Rain Carpet Sprinkles":
-        "Strawbanero Jam":
-        "Sweet Sunshine Jelly":
-        "Kentucky Blue Jam":
-        "Cherry Blossom Jam":
-        "Tipsy Peach Preserves":
-        // Add every product here with its real link
-    };
-    function updateCart() {
-        cartItemsDiv.innerHTML = '';
-        let total = 0;
-        let itemCount = 0;
-        if (cart.length === 0) {
-            emptyMessage.style.display = 'block';
-            checkoutBtn.style.display = 'none';
-        } else {
-            emptyMessage.style.display = 'none';
-            checkoutBtn.style.display = 'inline-block';
-        }
-        cart.forEach(item => {
-            total += item.price * item.qty;
-            itemCount += item.qty;
-            const p = document.createElement('p');
-            p.innerHTML = `<strong>${item.name}</strong> × ${item.qty} = $${(item.price * item.qty).toFixed(2)}`;
-            cartItemsDiv.appendChild(p);
-        });
-        cartTotalSpan.textContent = total.toFixed(2);
-        if (cartCountSpan) cartCountSpan.textContent = itemCount;
-    }
+    updateCartDisplay();
+
     // Add to cart buttons
     document.querySelectorAll('.add-to-cart').forEach(btn => {
         btn.addEventListener('click', () => {
             const name = btn.dataset.name;
-            const price = parseFloat(btn.dataset.price);
+            const price = parseFloat(btn.dataset.price) * 100; // Stripe uses cents
             const existing = cart.find(item => item.name === name);
-            if (existing) {
-                existing.qty++;
-            } else {
-                cart.push({ name, price, qty: 1 });
-            }
+            if (existing) existing.qty++;
+            else cart.push({ name, price, qty: 1 });
             localStorage.setItem('finchpoppy-cart', JSON.stringify(cart));
-            updateCart();
-            alert(`${name} added to cart!`);
+            updateCartDisplay();
         });
     });
-    // Real checkout — opens your Buy Me a Coffee page with pre-filled items
-    checkoutBtn?.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (cart.length === 0) return;
-        // Build Buy Me a Coffee extras URL with all items
-        let extras = cart.map(item =>
-            `${encodeURIComponent(item.name)} ×${item.qty} ($${item.price})`
-        ).join(' | ');
-        const message = `Order from Finch & Poppy:\n\n${extras}\n\nTotal: $${cart.reduce((sum,i)=>sum+i.price*i.qty,0).toFixed(2)}`;
-        const url = `https://buymeacoffee.com/yourname/extras?description=${encodeURIComponent(message)}`;
-        window.open(url, '_blank');
+
+    // Checkout button
+    document.getElementById('checkout')?.addEventListener('click', () => {
+        if (cart.length === 0) return alert('Your cart is empty');
+        document.getElementById('checkout-form').style.display = 'block';
+        document.getElementById('cart-summary').style.display = 'none';
     });
-    updateCart();
 });
+
+function updateCartDisplay() {
+    const itemsDiv = document.getElementById('cart-items');
+    const totalSpan = document.getElementById('cart-total');
+    if (!itemsDiv || !totalSpan) return;
+
+    itemsDiv.innerHTML = '';
+    let total = 0;
+    cart.forEach((item, i) => {
+        total += item.price * item.qty;
+        itemsDiv.innerHTML += `
+            <div class="d-flex justify-content-between py-2 border-bottom">
+                <span>${item.name} × ${item.qty}</span>
+                <span>$${(item.price * item.qty / 100).toFixed(2)}</span>
+                <button class="btn btn-sm text-danger" onclick="removeFromCart(${i})">×</button>
+            </div>`;
+    });
+    totalSpan.textContent = (total / 100).toFixed(2);
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    localStorage.setItem('finchpoppy-cart', JSON.stringify(cart));
+    updateCartDisplay();
+}
+
+// Final payment (runs when user submits form)
+async function createPayment() {
+    const email = document.getElementById('email').value;
+    const response = await fetch('https://yourdomain.com/charge', { // ← You’ll host this tiny file
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: cart, email })
+    });
+    const { clientSecret } = await response.json();
+    const result = await stripe.confirmCardPayment(clientSecret);
+    if (result.error) alert(result.error.message);
+    else {
+        alert('Payment successful! Thank you for your order.');
+        localStorage.removeItem('finchpoppy-cart');
+        cart = [];
+        updateCartDisplay();
+    }
+}
