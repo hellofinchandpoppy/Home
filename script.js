@@ -7,9 +7,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const emptyMessage = document.getElementById('empty-cart-message');
     // UPDATE THIS WITH YOUR REAL BUY ME A COFFEE LINKS
     const productLinks = {
-        "Strawbanero Jam": "https://buymeacoffee.com/yourname/e/strawbanero",
+        "Strawbanero Jam": "https://buymeacoffee.com/HelloFinch.Poppy/e/486365",
         "Holiday Cheers Candle": "https://buymeacoffee.com/yourname/e/candle",
         "My Old Kentucky Farmhouse Spray": "https://buymeacoffee.com/yourname/e/spray",
+        "My Old Kentucky Farmhouse Candle":
+        "Southern Charm Candle":
+        "Bluegrass Breeze Candle":
+        "Derby Days Candle":
+        "Bardstown Berry Candle":
+        "Downtown Stanford Candle":
+        "Kentucky Rain Candle":
+        "Sweet Autumn Reserve Candle":
+        "Pumpkin Brûlée Candle":
+        "The Ol’ Tobacco Barn Candle":
+        "Christmas in Kentucky Candle":
+        "Santa’s Village Candle":
+        "Winter Berry Bliss Candle":
+        "Peppermint Mocha Candle":
+        "Holiday Cheers Candle":
+        "Cookies for Santa Candle":
+        "Christmas Tree Farm Candle":
+        "My Old Kentucky Farmhouse Room Spray":
+        "Southern Charm Room Spray":
+        "Bluegrass Breeze Room Spray":
+        "Derby Days Room Spray":
+        "Bardstown Berry Room Spray":
+        "Downtown Stanford Room Spray":
+        "Kentucky Rain Room Spray":
+        "My Old Kentucky Farmhouse Carpet Sprinkles":
+        "Southern Charm Carpet Sprinkles":
+        "Bluegrass Breeze Carpet Sprinkles":
+        "Derby Days Carpet Sprinkles":
+        "Bardstown Berry Carpet Sprinkles":
+        "Downtown Stanford Carpet Sprinkles":
+        "Kentucky Rain Carpet Sprinkles":
+        "Strawbanero Jam":
+        "Sweet Sunshine Jelly":
+        "Kentucky Blue Jam":
+        "Cherry Blossom Jam":
+        "Tipsy Peach Preserves":
         // Add every product here with its real link
     };
     function updateCart() {
