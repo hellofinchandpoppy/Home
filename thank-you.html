@@ -3,62 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You! | Finch & Poppy Farm</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --fern-green: #005200;
-            --golden-brown: #b5651d;
-            --light-cocoa: #c3997a;
-            --medium-brown-gray: #8b7355;
-            --very-dark-yellow-beige: #8b7d6b;
-            --light-golden-brown: #d4a574;
-            --dark-mocha-brown: #5c4033;
-        }
-        body { font-family: 'Playfair Display', serif; background: linear-gradient(to bottom, #f8f5f0, #e8e2d8); color: var(--medium-brown-gray); margin: 0; padding: 0; }
-        .container { max-width: 800px; margin: 0 auto; padding: 2rem; text-align: center; }
-        h1 { font-family: 'Dancing Script', cursive; font-size: 3rem; color: var(--golden-brown); margin-bottom: 1rem; }
-        .product-name { color: var(--fern-green); font-style: italic; }
-        .confirmation { background: rgba(255, 255, 255, 0.8); padding: 2rem; border-radius: 10px; margin: 2rem 0; border-left: 5px solid var(--fern-green); }
-        .cta-btn { background: var(--fern-green); color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 5px; font-size: 1.2rem; display: inline-block; margin: 1rem; transition: background 0.3s; }
-        .cta-btn:hover { background: #003d00; }
-        .farm-tease { font-size: 1.1rem; margin-top: 2rem; opacity: 0.9; }
-        footer { margin-top: 3rem; padding: 1rem; background: var(--very-dark-yellow-beige); color: white; }
-    </style>
-    <script>
-        // Pull product name from URL query param
-        const urlParams = new URLSearchParams(window.location.search);
-        const product = urlParams.get('product') || 'your Finch & Poppy treasures';
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('product').textContent = product;
-        });
-    </script>
+    <title>Thank You | Finch & Poppy Farm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=5.1">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>🌿 Thank You for Blooming with Us!</h1>
-        <p style="font-size: 1.5rem; color: var(--golden-brown);">Your order of <span id="product" class="product-name"></span> is on its way from our Stanford, KY farm.</p>
-        
-        <div class="confirmation">
-            <h2>What's Next?</h2>
-            <ul style="text-align: left; max-width: 500px; margin: 0 auto; font-size: 1.1rem;">
-                <li><strong>Ships in 3-5 days</strong> via USPS (flat $8 rate; free over $100!)</li>
-                <li>Track your package: We'll email a link once shipped to hello@finchandpoppy.com</li>
-                <li>Care Tip: Store jams in a cool, dry spot. Candles? Trim wick to 1/4" for the best burn.</li>
-                <li>Questions? Reply to your confirmation email or DM us on Instagram @finchandpoppy</li>
-            </ul>
+
+    <!-- SAME NAVBAR AS EVERY OTHER PAGE -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="Finch & Poppy Farm" height="65">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
         </div>
-        
-        <a href="shop.html" class="cta-btn">Shop More Farm Goodies</a>
-        <a href="https://buymeacoffee.com/hellofinch.poppy" class="cta-btn">Join Our CSA Box Club</a>
-        
-        <div class="farm-tease">
-            <p>From our 5-acre haven—where bees buzz and towers grow year-round bounty—thank you for supporting sustainable harmony. Can't wait to fuel your kitchen & home with more organic magic! ♡</p>
+    </nav>
+
+    <!-- SAME HEADER STYLE AS ABOUT & SHOP -->
+    <section class="page-header">
+        <div class="container text-center py-5">
+            <h1>Thank You</h1>
+            <p class="lead">Your order has been received and is being hand-packed with care in Stanford, Kentucky.</p>
         </div>
-    </div>
-    
+    </section>
+
+    <section class="container py-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <div class="bg-light rounded p-5" style="border-left: 4px solid #9A7C49;">
+                    <h3 class="mb-4">What Happens Next</h3>
+                    <ul class="list-unstyled text-start mx-auto" style="max-width: 500px; font-size: 1.1rem;">
+                        <li class="mb-3">We'll prepare and ship your order within 2–3 business days</li>
+                        <li class="mb-3">Flat-rate shipping: $8 (free over $100)</li>
+                        <li class="mb-3">You'll receive a shipping confirmation email with tracking</li>
+                        <li class="mb-3">Questions? Email hello@finchandpoppy.com</li>
+                    </ul>
+                </div>
+
+                <div class="mt-5">
+                    <a href="shop.html" class="btn btn-primary btn-lg me-3">Continue Shopping</a>
+                    <a href="index.html" class="btn btn-outline-secondary btn-lg">Back to Home</a>
+                </div>
+
+                <p class="mt-5 text-muted">
+                    From our 5-acre farm to your doorstep — thank you for supporting sustainable, small-batch craftsmanship.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SAME FOOTER AS EVERY OTHER PAGE -->
     <footer>
-        <p>&copy; 2025 Finch & Poppy Farm LLC | Stanford, KY | Est. 2015</p>
+        <div class="container text-center py-5">
+            <img src="logo.png" alt="Finch & Poppy Farm" height="70" class="mb-3">
+            <p>&copy; 2025 Finch & Poppy Farm LLC • Stanford, Kentucky</p>
+        </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
