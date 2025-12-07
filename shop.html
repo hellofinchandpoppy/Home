@@ -100,13 +100,25 @@
                     <div class="col-md-6 col-lg-4"><div class="product-card text-center p-4"><h5>Tipsy Peach Preserves</h5><button class="btn btn-primary mt-3 add-to-cart" data-name="Tipsy Peach Preserves" data-price="6.99">Add to Cart</button></div></div>
                 </div>
 
-                <!-- CART SUMMARY – clean and minimal -->
-                <div class="text-center p-5 bg-light rounded mt-5">
-                    <h3>Your Cart</h3>
-                    <div id="cart-items" class="my-4"></div>
-                    <p class="h4"><strong>Total: $<span id="cart-total">0.00</span></strong></p>
-                    <button id="checkout" class="btn btn-primary btn-lg mt-3">Checkout & Pay</button>
+               
+                <div id="cart-drawer" class="cart-drawer">
+                <div class="cart-header">
+                <h3>Your Cart</h3>
+                <button class="btn-close" onclick="closeCart()"></button>
+                    </div>
+                    <div id="cart-items" class="cart-items"></div>
+                    <div class="cart-footer">
+                    <p><strong>Subtotal:</strong> $<span id="cart-subtotal">0.00</span></p>
+                    <p><strong>Shipping:</strong> $8.00 (Flat Rate USA)</p>
+                    <p class="fs-5"><strong>Total:</strong> $<span id="cart-total">8.00</span></p>
+                <button id="checkout" class="btn btn-primary w-100">Checkout & Pay</button>
                 </div>
+                </div>
+
+                <!-- Cart toggle button (add to navbar or bottom-right corner) -->
+                <button class="cart-toggle" onclick="toggleCart()">
+                Cart (<span id="cart-count">0</span>)
+                </button>
 
                 <!-- INTERNAL CHECKOUT FORM – HIDDEN UNTIL CLICKED -->
                 <div id="checkout-form" style="display:none; max-width:600px; margin:0 auto; padding:2rem; background:#FAF9F6; border-radius:12px;">
