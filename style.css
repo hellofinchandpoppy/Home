@@ -210,6 +210,27 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
+/* ==================== TOAST NOTIFICATIONS ==================== */
+.toast {
+    background-color: var(--warm-cream) !important;
+    border: 1px solid var(--gold) !important;
+    border-radius: 18px !important;
+    box-shadow: 0 4px 15px rgba(154,124,73,0.2) !important;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark-mocha);
+}
+.toast-body {
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 1rem 1.5rem;
+}
+.btn-close {
+    filter: opacity(0.6); /* Subtle gold tint if desired, or keep default */
+}
+.toast-container {
+    z-index: 1050; /* Above cart-drawer */
+}
+
 /* ==================== SECTIONS & FOOTER ==================== */
 section { padding: 5rem 0; }
 .bg-light-beige { background-color: var(--light-bg); }
