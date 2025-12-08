@@ -2,6 +2,6 @@
   "name": "finchandpoppy",
   "version": "1.0.0",
   "devDependencies": {
-    "@netlify/functions": "^2.0.0"  // Or latest version
+    "@netlify/functions": "^2.0.0"
   }
 }
