@@ -41,7 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
             else cart.push({ name, price, qty: 1 });
             localStorage.setItem('finchpoppy-cart', JSON.stringify(cart));
             updateCart();
-            alert('Added to cart!'); // UX feedback
+            // In the add-to-cart click handler (replace alert line):
+        const toastEl = document.getElementById('addToCartToast');
+        if (toastEl) {
+        toastEl.querySelector('.toast-body').textContent = `${name} added to cart!`; // Add this line
+        const toast = new bootstrap.Toast(toastEl, { delay: 3000 });
+        toast.show();
+        }
         });
     });
 
