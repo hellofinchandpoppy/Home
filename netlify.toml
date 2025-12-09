@@ -1,7 +1,7 @@
 [build]
-  publish = "Home"  # Adjust to your site's root directory if not "Home"
-  command = ""  # No build command needed
+  publish = "."
+  command = ""
 
 [functions]
-  directory = ".netlify/functions"  # Path to checkout.js
-  node_bundler = "esbuild"  # Optional: Faster for Node functions
+  directory = ".netlify/functions"
+  node_bundler = "esbuild"
